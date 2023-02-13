@@ -34,21 +34,33 @@
         // console.log(data);
         console.log('command', command,'note', note,'velocity', velocity)
         switch (command) {
-          case 144:
-            if (velocity > 0) {
-              //note is on
-              noteOn(note,velocity)
-            }else{
-              //note is off
-              noteOff(note)
-            }
-            break;
+  case 144:
+    if (velocity > 0) {
+      //note is on
+      noteOn(note, velocity);
+    } else {
+      //note is off
+      noteOff(note);
+    }
+    break;
+  case 146:
+    if (velocity > 0) {
+      //note is on
+      noteOn(note, velocity);
+    }
+    break;
+  case 130:
+    //note is off
+    noteOff(note);
+    break;
+  case 128:
+    //note is off
+    noteOff(note);
+    break;
+  default:
+    break;
+}
 
-          case 128:
-            ///note is off  
-          default:
-            break;
-        }
       };
     }
   }
